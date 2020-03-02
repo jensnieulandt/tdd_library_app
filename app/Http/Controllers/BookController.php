@@ -9,11 +9,19 @@ class BookController extends Controller
 {
     public function store()
     {
-        $data = request()->validate([
+        Book::create($this->validateRequest());
+    }
+
+    public function update(Book $book)
+    {
+        $book->update($this->validateRequest());
+    }
+
+    protected function validateRequest()
+    {
+        return request()->validate([
             'title' => 'required',
             'author' => 'required'
         ]);
-
-        Book::create($data);
     }
 }
