@@ -65,8 +65,6 @@ class BookManagementTest extends TestCase
 
     public function testBookCanBeDeleted()
     {
-        $this->withoutExceptionHandling();
-
         $this->post('/books', [
             'title' => 'myTitle',
             'author' => 'myAuthor'
