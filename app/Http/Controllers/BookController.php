@@ -24,4 +24,9 @@ class BookController extends Controller
             'author' => 'required'
         ]);
     }
+
+    public function destroy(Book $book)
+    {
+        $book->delete();
+    }
 }
