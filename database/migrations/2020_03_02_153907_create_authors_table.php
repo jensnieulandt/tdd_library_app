@@ -18,7 +18,7 @@ class CreateAuthorsTable extends Migration
             $table->timestamps();
 
             $table->string('name');
-            $table->timestamp('date_of_birth');
+            $table->timestamp('date_of_birth')->nullable();
         });
     }
 
